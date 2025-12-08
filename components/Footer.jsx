@@ -27,9 +27,9 @@ export default function Footer() {
         <div className="w-[1200px] max-w-full flex justify-between items-center gap-5 pb-10">
             <p>© 2025. Todos los derechos reservados.</p>
             <div className="flex gap-5 ">
-                {
+            {
                     arrayMedia.map((val,i) => (
-                        <a key={i} href={val.link} target="_blank" rel="noopener noreferrer" className=" h-12 aspect-square flex justify-center items-center rounded-full border border-beige transition-all duration-300 hover:bg-beige hover:text-marron-oscuro">
+                        <a key={i} href={val.link} target="_blank" rel="noopener noreferrer" className=" h-12 p-3 aspect-square flex justify-center items-center rounded-full border border-beige transition-all duration-300 hover:bg-beige hover:text-marron-oscuro">
                             <FontAwesomeIcon icon={val.icon}/>
                         </a>
                     ))
