@@ -98,10 +98,9 @@ function Landing() {
           <Image
             src="/assets/fundador.jpeg"
             alt="Foto de César Escalante, fundador"
-            fill
-            className="object-cover object-top rounded-xl"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority
+            className="rounded-xl object-cover object-top shadow-2xl"
+            width={650}
+            height={650}
           />
         </div>
         <div className="px-5 md:w-1/2">
