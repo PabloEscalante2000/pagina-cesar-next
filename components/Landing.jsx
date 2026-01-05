@@ -237,19 +237,10 @@ function Landing() {
         <div className="flex pt-10 flex-wrap gap-10 justify-center items-center">
           <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
             <Image
-              src="/assets/noeticalogo.svg"
+              src="/assets/ites.png"
               width={256}
               height={256}
-              alt="Logo NOÉTICA"
-            />
-          </div>
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/yachay.png"
-              width={256}
-              height={90}
-              className="w-64 h-auto"
-              alt="Logo Yachay"
+              alt="Logo Ites"
             />
           </div>
           <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
