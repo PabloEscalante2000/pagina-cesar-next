@@ -136,15 +136,14 @@ function Landing() {
           </div>
         </div>
       </div>
-    
+  
       {/* seccion de presentacion 2 */}
       <div className="xl:w-[1300px] w-full mx-auto py-10 md:px-5 px-0 flex md:flex-row flex-col gap-10">
         <div className="px-5 md:w-1/2">
           <div className="font-poppins space-y-3 py-5 text-base">
-            <p dangerouslySetInnerHTML={{ __html: t("texto1-p1") }} />
-            <p>{t("texto3-p1")}</p>
-            <p>{t("texto3-p2")}</p>
-            <p>{t("texto3-p3")}</p>
+            <p dangerouslySetInnerHTML={{ __html: t("texto3-p1") }} />
+            <p dangerouslySetInnerHTML={{ __html: t("texto3-p2") }} />
+            <p dangerouslySetInnerHTML={{ __html: t("texto3-p3") }} />
           </div>
         </div>
         <div className="relative rounded-xl md:h-full md:w-1/2 w-full min-h-[400px] md:min-h-0 shadow-2xl">
