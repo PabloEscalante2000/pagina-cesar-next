@@ -93,10 +93,11 @@ function Landing() {
         </div>
       </div>
 
-      <div className="xl:w-[1300px] w-full mx-auto py-10 md:px-5 px-0 sm:pt min-h-[600px] flex md:flex-row flex-col gap-10">
+      {/* seccion de presentacion */}
+      <div className="xl:w-[1300px] w-full mx-auto py-10 md:px-5 px-0 flex md:flex-row flex-col gap-10">
         <div className="relative rounded-xl md:h-full md:w-1/2 w-full min-h-[400px] md:min-h-0 shadow-2xl">
           <Image
-            src="/assets/fundador.jpeg"
+            src="/assets/cesar_new-min.webp"
             alt="Foto de César Escalante, fundador"
             className="rounded-xl object-cover object-top shadow-2xl"
             width={650}
@@ -135,7 +136,28 @@ function Landing() {
           </div>
         </div>
       </div>
-      
+    
+      {/* seccion de presentacion 2 */}
+      <div className="xl:w-[1300px] w-full mx-auto py-10 md:px-5 px-0 flex md:flex-row flex-col gap-10">
+        <div className="px-5 md:w-1/2">
+          <div className="font-poppins space-y-3 py-5 text-base">
+            <p dangerouslySetInnerHTML={{ __html: t("texto1-p1") }} />
+            <p>{t("texto3-p1")}</p>
+            <p>{t("texto3-p2")}</p>
+            <p>{t("texto3-p3")}</p>
+          </div>
+        </div>
+        <div className="relative rounded-xl md:h-full md:w-1/2 w-full min-h-[400px] md:min-h-0 shadow-2xl">
+          <Image
+            src="/assets/cesar_new.jpg"
+            alt="Foto de César Escalante, fundador"
+            className="rounded-xl object-cover object-top shadow-2xl"
+            width={650}
+            height={650}
+          />
+        </div>
+      </div>
+
       <div className="py-12 flex flex-col gap-10 xl:w-[1200px] w-full justify-center items-center mx-auto">
         <h1 className="text-marron-oscuro text-center p-5 text-4xl font-poppins-bold">
           {t("tit-asoc")}
