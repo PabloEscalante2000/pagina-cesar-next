@@ -30,7 +30,7 @@ function Landing() {
       texto: t("des-pseres"),
     },
     {
-      link: "https://escconsultora.com/inicio",
+      link: "https://institutoitas.com/",
       nombre: "ITAS",
       img: "/assets/taller_evento.jpg",
       texto: t("des-esc"),
@@ -266,7 +266,7 @@ function Landing() {
           </div>
           <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
             <Image
-              src="/assets/propuesta_logo_ilumina_01.svg"
+              src="/assets/ilumina_logo.png"
               width={256}
               height={256}
               alt="Logo Ites"
