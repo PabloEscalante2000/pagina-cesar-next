@@ -31,7 +31,7 @@ function Landing() {
     },
     {
       link: "https://escconsultora.com/inicio",
-      nombre: "NOÉTICA",
+      nombre: "ITAS",
       img: "/assets/taller_evento.jpg",
       texto: t("des-esc"),
     },
@@ -258,7 +258,15 @@ function Landing() {
         <div className="flex pt-10 flex-wrap gap-10 justify-center items-center">
           <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
             <Image
-              src="/assets/ites.png"
+              src="/assets/itas_icono.png"
+              width={256}
+              height={256}
+              alt="Logo Itas"
+            />
+          </div>
+          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
+            <Image
+              src="/assets/propuesta_logo_ilumina_01.svg"
               width={256}
               height={256}
               alt="Logo Ites"
