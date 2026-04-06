@@ -1,362 +1,262 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faCheck } from "@fortawesome/free-solid-svg-icons";
-import { useTranslation } from "react-i18next";
 
-// NOTA: Todos los assets (imágenes, videos) deben estar en la carpeta `public/assets`.
-// Por ejemplo, `../assets/fundador.jpeg` ahora se accede como `/assets/fundador.jpeg`.
+const empresas = [
+  {
+    link: "https://eadespsicoterapia.com/inicio/",
+    nombre: "EADES",
+    logo: "/assets/logo_eades.webp",
+    texto: "Enfocados en el cuidado integral de la salud mental",
+    color: null,
+  },
+  {
+    link: "https://www.pseres.pe/",
+    nombre: "PSERES",
+    logo: "/assets/pseres_vert.svg",
+    texto: "Dedicados a la formación integral de niños y adolescentes",
+    color: "#777844",
+  },
+  {
+    link: "https://institutoitas.com/",
+    nombre: "ITAS",
+    logo: "/assets/itas_icono.png",
+    texto: "Instituto dedicado a la formación y la reflexión clínica en salud mental",
+    color: null,
+  },
+  {
+    link: "https://asociacionilumina.org/inicio",
+    nombre: "ILUMINA",
+    logo: "/assets/ilumina_logo.png",
+    texto: "Acceso a la salud mental para todas las personas",
+    color: null,
+  },
+];
 
-function Landing() {
-  const { t, i18n } = useTranslation();
+const asociaciones = [
+  {
+    img: "/assets/sip_logo.png",
+    nombre: "Sociedad Interamericana de Psicología (SIP)",
+    alt: "Logo SIP",
+  },
+  {
+    img: "/assets/nspa.png",
+    nombre: "Sociedad Internacional de Neuropsicoanálisis",
+    alt: "Logo NSPA",
+  },
+  {
+    img: "/assets/member.jpeg",
+    nombre: "Centro Intercultural de Londres (LIC)",
+    alt: "Logo London Intercultural Center",
+  },
+  {
+    img: "/assets/iaoth.jpeg",
+    nombre: "Asociación Internacional de Terapeutas (IAOTH)",
+    alt: "Logo IAOTH",
+  },
+  {
+    img: "/assets/euroasopsy.png",
+    nombre: "Asociación Europea de Psicología Aplicada (EAAP)",
+    alt: "Logo Euroasopsy",
+  },
+];
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-
-  const empresas = [
-    {
-      link: "https://grupoeades.org/inicio",
-      nombre: "EADES",
-      img: "/assets/eadesSlide.jpg",
-      texto: t("des-eades"),
-    },
-    {
-      link: "https://www.pseres.pe/",
-      nombre: "PSERES",
-      img: "/assets/slidePseres.webp",
-      texto: t("des-pseres"),
-    },
-    {
-      link: "https://institutoitas.com/",
-      nombre: "ITAS",
-      img: "/assets/taller_evento.jpg",
-      texto: t("des-esc"),
-    },
-  ];
-
-  const serv = [
-    {
-      img: "/assets/1.png",
-      nombre: t("icon-1"),
-    },
-    {
-      img: "/assets/2.png",
-      nombre: t("icon-2"),
-    },
-    {
-      img: "/assets/3.png",
-      nombre: t("icon-3"),
-    },
-    {
-      img: "/assets/4.png",
-      nombre: t("icon-4"),
-    },
-  ];
-
+export default function Landing() {
   return (
-    <div className=" bg-beige" id="inicio">
-      <select
-        className="font-poppins-bold p-3 fixed bg-marroncito-v2/80 backdrop-blur-sm text-marroncito z-50 top-5 left-5 rounded-md"
-        onChange={(e) => changeLanguage(e.target.value)}
-        aria-label="Seleccionar idioma"
+    <div className="overflow-x-hidden">
+
+      {/* ── HERO ── */}
+      <section
+        className="min-h-screen flex items-center justify-center relative"
+        style={{
+          backgroundImage: "url('/assets/fondo_hero.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
       >
-        <option value="es">Español</option>
-        <option value="en">English</option>
-      </select>
-      <div className="w-full aspect-video max-h-[700px] min-h-[300px] relative bg-black">
+        <div className="absolute inset-0 bg-crema/50" />
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-start justify-center gap-5 pt-20">
+          <h1 className="font-cardo text-marino text-4xl md:text-5xl lg:text-6xl leading-tight uppercase">
+            César Escalante
+          </h1>
+          {/* Línea divisoria: elipse SVG, color verde, más gruesa en el centro */}
+          <svg
+            viewBox="0 0 560 12"
+            height="12"
+            className="w-[min(560px,100%)]"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <ellipse cx="280" cy="6" rx="280" ry="6" fill="#708273" />
+          </svg>
+          <p className="font-quicksand text-marino text-lg md:text-xl lg:text-2xl tracking-widest">
+            Psicólogo clínico&nbsp;·&nbsp;Psicoterapeuta&nbsp;·&nbsp;Neuropsicólogo
+          </p>
+        </div>
+      </section>
+
+      {/* ── VIDEO / GRUPO EADES ── */}
+      <section className="relative min-h-[600px] flex items-center justify-center">
         <video
-          className="absolute w-full h-full inset-0 object-cover object-center fade-video"
+          className="absolute inset-0 w-full h-full object-cover"
           muted
           loop
           autoPlay
-          playsInline // Mejora la compatibilidad en móviles
+          playsInline
         >
-          <source src="/assets/landing.webm" type="video/webm" />
+          <source src="/assets/video_landing.webm" type="video/webm" />
         </video>
-        <div className="md:w-1/2 w-full h-full relative flex justify-center items-center flex-col gap-3 text-beige p-5">
-          <h1 className="font-open-sans-bold lg:text-6xl text-4xl pt-10">
-            {t("cesar-title")}
-          </h1>
-          <p
-            className="font-poppins-light text-lg lg:text-2xl text-center"
-            dangerouslySetInnerHTML={{ __html: t("des-cesar-title") }}
-          />
-          <Link
-            className="px-3 py-3 bg-marron-oscuro rounded-md"
-            href="/articulos"
-          >
-            {t("conoce-trabajo")} <FontAwesomeIcon icon={faArrowRight} />
-          </Link>
-        </div>
-      </div>
-
-      {/* seccion de presentacion */}
-      <div className="xl:w-[1300px] w-full mx-auto py-10 md:px-5 px-0 flex md:flex-row flex-col gap-10">
-        <div className="relative rounded-xl md:h-full md:w-1/2 w-full min-h-[400px] md:min-h-0 shadow-2xl">
+        <div className="absolute inset-0 bg-marino/70" />
+        <div className="relative z-10 flex flex-col items-center gap-7 text-center px-6 py-20">
           <Image
-            src="/assets/cesar_new-min.webp"
-            alt="Foto de César Escalante, fundador"
-            className="rounded-xl object-cover object-top shadow-2xl"
-            width={650}
-            height={650}
+            src="/assets/logo_fondo_oscuro.png"
+            width={220}
+            height={220}
+            alt="Logo Grupo EADES"
+            className="w-44 md:w-56 h-auto"
           />
-        </div>
-        <div className="px-5 md:w-1/2">
-          <h1 className="font-poppins-light text-base text-marron-oscuro bolder tracking-widest pt-5 pb-2">
-            {t("sobre-mi")}
-          </h1>
-          <div className="font-poppins space-y-3 py-5 text-base">
-            <p
-              className="font-poppins-light text-sm pb-2"
-              dangerouslySetInnerHTML={{ __html: t("des-mi") }}
-            />
-            <p dangerouslySetInnerHTML={{ __html: t("texto1-p1") }} />
-            <p>{t("texto1-p2")}</p>
-            <p>{t("texto1-p3")}</p>
-            <div className="flex justify-center items-start flex-wrap gap-5 text-marron-oscuro text-center">
-              {serv.map((val, i) => (
-                <div
-                  className="flex flex-col gap-3 justify-center items-center max-w-40"
-                  key={i}
-                >
-                  <Image
-                    className="w-40 h-auto"
-                    width={160}
-                    height={160}
-                    src={val.img}
-                    alt={val.nombre}
-                  />
-                  <p>{val.nombre}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      {/* seccion de presentacion 2 */}
-      <div className="xl:w-[1300px] w-full mx-auto py-10 md:px-5 px-0 flex md:flex-row flex-col gap-10">
-        <div className="px-5 md:w-1/2">
-          <div className="font-poppins space-y-3 py-5 text-base">
-            <p dangerouslySetInnerHTML={{ __html: t("texto3-p1") }} />
-            <p dangerouslySetInnerHTML={{ __html: t("texto3-p2") }} />
-            <p dangerouslySetInnerHTML={{ __html: t("texto3-p3") }} />
-          </div>
-        </div>
-        <div className="relative rounded-xl md:h-full md:w-1/2 w-full min-h-[400px] md:min-h-0 shadow-2xl">
-          <Image
-            src="/assets/cesar_new.jpg"
-            alt="Foto de César Escalante, fundador"
-            className="rounded-xl object-cover object-top shadow-2xl"
-            width={650}
-            height={650}
-          />
-        </div>
-      </div>
-
-      <div className="py-12 flex flex-col gap-10 xl:w-[1200px] w-full justify-center items-center mx-auto">
-        <h1 className="text-marron-oscuro text-center p-5 text-4xl font-poppins-bold">
-          {t("tit-asoc")}
-        </h1>
-        <div className="flex pt-10 flex-wrap gap-10 justify-center items-center">
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/sip_logo.png"
-              width={150}
-              height={80}
-              className="h-20 w-auto"
-              alt="Logo SIP"
-            />
-            <span>{t("prim-asoc")}</span>
-          </div>
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/nspa.png"
-              width={150}
-              height={80}
-              className="h-20 w-auto"
-              alt="Logo Asociación NSAP"
-            />
-            <span>{t("sec-asoc")}</span>
-          </div>
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/member.jpeg"
-              width={150}
-              height={80}
-              className="h-20 w-auto"
-              alt="Logo London Intercultural Center"
-            />
-            <span>{t("ter-asoc")}</span>
-          </div>
-          <div className="max-w-96 text-center font-poppins-light flex flex-col justify-center items-center gap-5 mt-10">
-            <Image
-              src="/assets/iaoth.jpeg"
-              width={150}
-              height={80}
-              className="h-20 w-auto"
-              alt="Logo IAOTH"
-            />
-            <span>{t("cuar-asoc")}</span>
-          </div>
-
-          <div className=" max-w-[560px] text-center font-poppins-light flex flex-col justify-center items-center gap-5 mt-10">
-            <Image
-              src="/assets/euroasopsy.png"
-              width={150}
-              height={80}
-              className="h-20 w-auto"
-              alt="Logo Euroasopsy"
-            />
-            <span>{t("quin-asoc")}</span>
-          </div>
-        </div>
-      </div>
-      <h1 className="text-marron-oscuro text-center p-5 text-4xl font-poppins-bold">
-        {t("mis-centro")}
-      </h1>
-      <div className="flex md:flex-row flex-col w-full mx-auto py-10">
-        {empresas.map((val, i) => (
-          <div
-            key={i}
-            className="md:flex-2 relative h-[600px] transition-all duration-300 delay-150 group overflow-hidden"
-          >
-            <Image
-              src={val.img}
-              alt={`Fondo de ${val.nombre}`}
-              fill
-              className="object-cover object-center transition-all ease-in-out duration-300 group-hover:scale-110"
-              sizes="(max-width: 768px) 33vw, 100vw"
-            />
-            <div className=" bg-black/25 absolute w-full h-full inset-0" />
-            <div className="absolute w-full h-full flex justify-center items-center flex-col gap-3 p-5">
-              <h2
-                className="font-poppins-bold sm:text-5xl text-4xl text-center text-marroncito uppercase"
-                dangerouslySetInnerHTML={{ __html: val.nombre }}
-              />
-              <p
-                className="text-marroncito font-poppins-light text-xl max-w-64 text-center"
-                dangerouslySetInnerHTML={{ __html: val.texto }}
-              />
-              <a
-                className="px-5 py-3 text-marroncito bg-marron-oscuro rounded-full cursor-pointer transition-all shadow-lg duration-200 hover:scale-95"
-                rel="noopener noreferrer"
-                target="_blank"
-                href={val.link}
-              >
-                {t("visitar-web")}
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="py-12 flex flex-col gap-10 xl:w-[1200px] w-full justify-center items-center mx-auto">
-        <div className="flex pt-10 flex-wrap gap-10 justify-center items-center">
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/itas_icono.png"
-              width={256}
-              height={256}
-              alt="Logo Itas"
-            />
-          </div>
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/ilumina_logo.png"
-              width={256}
-              height={256}
-              alt="Logo Ites"
-            />
-          </div>
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/kora.png"
-              width={256}
-              height={100}
-              className="w-64 h-auto"
-              alt="Logo Kora"
-            />
-          </div>
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/logo_eades.webp"
-              width={256}
-              height={80}
-              className="w-64 h-auto"
-              alt="Logo Eades"
-            />
-          </div>
-          <div className="max-w-[300px] text-center font-poppins-light flex flex-col justify-center items-center gap-5">
-            <Image
-              src="/assets/pseres.png"
-              width={256}
-              height={80}
-              className="w-64 h-auto"
-              alt="Logo Pseres"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="w-[1800px] p-5 max-w-full flex justify-center items-center gap-10 flex-wrap mx-auto">
-        <div className="flex flex-col justify-center gap-10">
-          <Image
-            src="/assets/mas_alla_del_consultorio.png"
-            width={500}
-            height={150}
-            alt="Logo del Podcast Más Allá del Consultorio"
-            className="w-[500px] max-w-full h-auto"
-          />
-          <ul className="space-y-3">
-            <li className="text-xl flex gap-3 font-poppins items-center">
-              <span className="aspect-square text-lg w-10 bg-marroncito-v2 text-marroncito inline-flex justify-center items-center rounded-full">
-                <FontAwesomeIcon icon={faCheck} />
-              </span>{" "}
-              {t("cons-1")}
-            </li>
-            <li className="text-xl flex gap-3 font-poppins items-center">
-              <span className="aspect-square text-lg w-10 bg-marroncito-v2 text-marroncito inline-flex justify-center items-center rounded-full">
-                <FontAwesomeIcon icon={faCheck} />
-              </span>{" "}
-              {t("cons-2")}
-            </li>
-            <li className="text-xl flex gap-3 font-poppins items-center">
-              <span className="aspect-square text-lg w-10 bg-marroncito-v2 text-marroncito inline-flex justify-center items-center rounded-full">
-                <FontAwesomeIcon icon={faCheck} />
-              </span>{" "}
-              {t("cons-3")}
-            </li>
-          </ul>
+          <p className="font-quicksand text-crema text-xl md:text-2xl lg:text-3xl max-w-xl">
+            Salud mental a todas las personas
+          </p>
           <a
-            className="flex gap-3 p-1 bg-linear-to-r from-marroncito-v2 to-marron-claro-pseres justify-center items-center font-poppins-light text-lg w-fit text-white rounded-full cursor-pointer"
-            href={
-              "https://open.spotify.com/show/4DBExpbyHvEpeA5bhxM5M9?si=RyJKdhG6QxyZfe_B-9Wsag"
-            }
+            href="https://grupoeades.org"
             target="_blank"
             rel="noopener noreferrer"
+            className="px-8 py-3 bg-dorado text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-dorado/80 transition-colors duration-200"
           >
-            <p className="px-5">{t("const-escuchar")}</p>
-            <span className="w-10 aspect-square flex justify-center items-center rounded-full bg-marroncito-v2/70 -rotate-45">
-              <FontAwesomeIcon icon={faArrowRight} />
-            </span>
+            Visitar sitio web
           </a>
         </div>
-        <div className="fade-celular">
-          <Image
-            src="/assets/celulares.png"
-            width={800}
-            height={800}
-            alt="Celulares mostrando el podcast de César Escalante"
-            className="w-[800px] max-w-full h-auto"
-          />
+      </section>
+
+      {/* ── LIBRO: EL AMOR ES UN DELIRIO ── */}
+      <section className="bg-crema py-24">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row gap-14 items-center">
+          {/* Imagen del libro */}
+          <div className="lg:w-1/2 flex justify-center">
+            <Image
+              src="/assets/EL-AMOR-ES-UN-DELIRIO-MOCKUP-3-1-1.webp"
+              width={550}
+              height={550}
+              alt="El amor es un delirio — César Escalante"
+              className="w-full max-w-sm lg:max-w-md h-auto drop-shadow-2xl"
+            />
+          </div>
+
+          {/* Contenido */}
+          <div className="lg:w-1/2 flex flex-col gap-5">
+            <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
+              Disponible ahora
+            </span>
+            <h2 className="font-cardo text-marino text-4xl lg:text-5xl leading-tight">
+              El amor es un delirio
+            </h2>
+            <div className="w-16 h-px bg-dorado" />
+            <p className="font-cardo text-marino/75 text-base leading-relaxed">
+              Este ensayo examina cómo la mente, impulsada por el amor, construye certezas
+              como defensa ante la duda. Más que explorar el amor como vivencia, el libro
+              investiga el momento en que el afecto se convierte en interpretación, cuando los
+              gestos se vuelven evidencia y los pensamientos se solidifican en verdades
+              incuestionables. El autor sugiere que el exceso de pensamiento se convierte en
+              un mecanismo sofisticado para perder el amor mismo.
+            </p>
+            <p className="font-cardo text-marino/75 text-base leading-relaxed">
+              La obra es una meditación clínica y cultural sobre cómo opera la incertidumbre
+              en los vínculos amorosos. Se aparta de los marcos de la autoayuda para analizar
+              el amor como un fenómeno psicológico complejo, donde el deseo, la duda y la
+              fantasía se intersectan con la necesidad humana de control. La pregunta central
+              es qué sucede cuando el amor deja de sentirse y empieza a pensarse en exceso.
+            </p>
+            <p className="font-cardo text-marino/75 text-base leading-relaxed">
+              César Escalante, con más de veinticinco años de práctica clínica, explora cómo
+              la psique construye significados y se defiende de lo desconocido. Este libro
+              surgió de preguntas recurrentes en su trabajo terapéutico: las formas en que el
+              amor romántico se transforma de experiencia directa en vigilancia y certeza
+              forzada. Más que ofrecer respuestas tranquilizadoras, examina el amor como
+              fundamentalmente marcado por la tensión entre el sentir y el pensar.
+            </p>
+            <a
+              href="https://elamoresundelirio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit px-8 py-3 bg-marino text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-marino/80 transition-colors duration-200"
+            >
+              Ver sitio web
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── MIS EMPRESAS ── */}
+      <section className="bg-crema py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-cardo text-marino text-4xl lg:text-5xl">Mis Empresas</h2>
+            <div className="w-16 h-px bg-dorado mx-auto mt-4" />
+          </div>
+          <div className="flex flex-wrap justify-center gap-14">
+            {empresas.map((val, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center gap-5 max-w-[220px] text-center"
+              >
+                <Image
+                  src={val.logo}
+                  width={200}
+                  height={120}
+                  alt={`Logo ${val.nombre}`}
+                  className="h-24 w-auto object-contain"
+                  style={val.color ? { filter: "invert(48%) sepia(14%) saturate(830%) hue-rotate(36deg) brightness(88%) contrast(85%)" } : {}}
+                />
+                <p className="font-cardo text-marino text-base font-bold">{val.nombre}</p>
+                {val.texto && (
+                  <p className="font-quicksand text-marino/65 text-xs leading-relaxed tracking-wide">
+                    {val.texto}
+                  </p>
+                )}
+                <a
+                  href={val.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-1.5 border border-dorado text-dorado font-quicksand text-xs tracking-widest uppercase rounded-full hover:bg-dorado hover:text-crema transition-all duration-200"
+                >
+                  Visitar
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ASOCIADO A ── */}
+      <section className="bg-marino py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-cardo text-crema text-4xl lg:text-5xl">Asociado a</h2>
+            <div className="w-16 h-px bg-dorado mx-auto mt-4" />
+          </div>
+          <div className="flex flex-wrap justify-center gap-12">
+            {asociaciones.map((val, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center gap-4 max-w-[200px] text-center"
+              >
+                <Image
+                  src={val.img}
+                  width={120}
+                  height={80}
+                  alt={val.alt}
+                  className="h-16 w-auto object-contain"
+                />
+                <p className="font-quicksand text-crema/70 text-xs leading-relaxed tracking-wide">
+                  {val.nombre}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
-
-export default Landing;
