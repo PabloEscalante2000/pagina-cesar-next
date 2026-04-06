@@ -42,4 +42,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://cesarescalantesifuentes.com/articulos/bullying-prevencion/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cesarescalantesifuentes.com/articulos/ninos-emociones/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cesarescalantesifuentes.com/articulos/mente-estres-extremo/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cesarescalantesifuentes.com/articulos/cerebro-amor/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

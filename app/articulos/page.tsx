@@ -1,6 +1,9 @@
 export const dynamic = "force-static";
 
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import articles from "../../public/data/dataArticulos.json";
 
 export const metadata: Metadata = {
   title: "Artículos",
@@ -21,17 +24,22 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://cesarescalantesifuentes.com/articulos" },
 };
 
-import Footer from "@/components/Footer";
-import data from "@/public/data/dataArticulos.json";
-import Image from "next/image";
+type Article = {
+  slug: string;
+  titulo: string;
+  subtitulo: string;
+  categoria: string;
+  imagen: string;
+  contenido: string[];
+};
 
 export default function Articulos() {
   return (
-    <div className="bg-crema min-h-dvh flex flex-col">
-      <div className="flex-auto pt-24">
+    <main className="bg-crema min-h-screen pt-24 pb-20">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Encabezado */}
-        <div className="max-w-6xl mx-auto px-6 mb-12">
+        <div className="mb-16">
           <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
             Publicaciones
           </span>
@@ -42,46 +50,47 @@ export default function Articulos() {
         </div>
 
         {/* Grid */}
-        <section className="max-w-6xl mx-auto px-6 pb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {data.map((val, i) => (
-              <div
-                key={i}
-                className="bg-white border border-marino/10 flex flex-col justify-between rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200"
-              >
-                <div>
-                  <Image
-                    src={val.img}
-                    alt={val.title}
-                    width={500}
-                    height={300}
-                    className="w-full h-40 object-cover"
-                  />
-                  <div className="p-4 space-y-2">
-                    <h2 className="font-cardo text-marino text-base leading-snug">
-                      {val.title}
-                    </h2>
-                    <p className="font-cardo text-marino/60 text-sm line-clamp-3 leading-relaxed">
-                      {val.introduction}
-                    </p>
-                  </div>
-                </div>
-                <div className="px-4 pb-4">
-                  <a
-                    href={val.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-5 py-2 border border-dorado text-dorado font-quicksand text-xs tracking-widest uppercase rounded-full hover:bg-dorado hover:text-crema transition-all duration-200"
-                  >
-                    Leer Artículo
-                  </a>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+          {(articles as Article[]).map((article, i) => (
+            <Link
+              key={i}
+              href={`/articulos/${article.slug}`}
+              className="group flex flex-col bg-white rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200"
+            >
+              {/* Imagen */}
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src={article.imagen}
+                  alt={article.titulo}
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-marino/20" />
+                <span className="absolute top-4 left-4 bg-marino/80 text-crema font-quicksand text-xs tracking-widest uppercase px-3 py-1 rounded-full">
+                  {article.categoria.split("·")[0].trim()}
+                </span>
               </div>
-            ))}
-          </div>
-        </section>
+
+              {/* Contenido */}
+              <div className="p-6 flex flex-col gap-3 flex-1">
+                <h2 className="font-cardo text-marino text-xl leading-snug group-hover:text-dorado transition-colors duration-200">
+                  {article.titulo}
+                </h2>
+                <p className="font-cardo text-marino/60 text-sm italic leading-relaxed line-clamp-2">
+                  {article.subtitulo}
+                </p>
+                <p className="font-cardo text-marino/70 text-sm leading-relaxed line-clamp-3 flex-1">
+                  {article.contenido[0]}
+                </p>
+                <span className="font-quicksand text-dorado text-xs tracking-widest uppercase mt-2 group-hover:underline">
+                  Leer artículo →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-      <Footer />
-    </div>
+    </main>
   );
 }
