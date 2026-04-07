@@ -114,10 +114,10 @@ export default function EmpresasPage() {
                   <div className={`absolute inset-0 backface-hidden ${empresa.bg} rounded-sm flex flex-col items-center justify-center gap-6 p-8`}>
                     <Image
                       src={empresa.logo}
-                      width={200}
-                      height={100}
+                      width={320}
+                      height={160}
                       alt={`Logo ${empresa.nombre}`}
-                      className="h-20 w-auto object-contain brightness-0 invert"
+                      className="h-36 w-auto object-contain brightness-0 invert"
                     />
                     <p className="font-quicksand text-crema/70 text-xs tracking-[0.25em] uppercase text-center">
                       {empresa.tagline}

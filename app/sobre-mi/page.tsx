@@ -1,7 +1,6 @@
 export const dynamic = "force-static";
 
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Sobre mí",
@@ -26,88 +25,100 @@ import data from "../../public/data/dataSobremi.json";
 
 export default function SobreMi() {
   return (
-    <main className="min-h-screen bg-crema pt-24 pb-20">
-      <div className="max-w-5xl mx-auto px-6">
+    <main className="min-h-screen bg-crema">
 
-        {/* Encabezado */}
-        <div className="text-center mb-16">
-          <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
+      {/* ── HERO ── */}
+      <section
+        className="min-h-screen flex items-center relative"
+        style={{
+          backgroundImage: "url('/assets/fondo_sobre-mi1.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "right center",
+        }}
+      >
+        <div className="absolute inset-0 bg-marino/60" />
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-start gap-6 pt-24 pb-16">
+          <span className="font-quicksand text-white text-xs tracking-[0.3em] uppercase">
             Psicólogo clínico · Psicoterapeuta · Neuropsicólogo
           </span>
-          <h1 className="font-cardo text-marino text-5xl lg:text-6xl mt-3 mb-5">
+          <h1 className="font-cardo text-white text-4xl md:text-5xl lg:text-6xl leading-tight uppercase">
             Sobre mí
           </h1>
-          <div className="w-16 h-px bg-dorado mx-auto" />
-        </div>
-
-        {/* Cita */}
-        <div className="bg-marino px-10 py-12 mb-16 rounded-sm">
-          <p className="font-cardo text-crema text-xl lg:text-2xl italic leading-relaxed text-center">
-            {data.cita}
+          <p className="font-quicksand text-white text-lg md:text-xl tracking-widest">
+            César Escalante Sifuentes
           </p>
-          <p className="font-quicksand text-dorado text-xs tracking-[0.25em] uppercase text-center mt-5">
-            — {data.autor}
-          </p>
-        </div>
 
-        {/* Bio: imagen + descripción 1 y 2 */}
-        <div className="flex flex-col lg:flex-row gap-14 items-start mb-20">
-          <div className="lg:w-2/5 flex justify-center">
-            <Image
-              src="/assets/cesar_new.jpg"
-              width={500}
-              height={650}
-              alt="César Escalante Sifuentes"
-              className="w-full max-w-sm h-auto rounded-sm shadow-xl object-cover object-top"
-            />
-          </div>
-
-          <div className="lg:w-3/5 flex flex-col gap-6 justify-center">
-            <p className="font-cardo text-marino/80 text-base leading-relaxed">
-              {data["descipcion-1"]}
+          {/* Cita */}
+          <div className="mt-6 border-l-4 border-verde pl-6 max-w-2xl">
+            <p className="font-cardo text-white text-xl lg:text-2xl italic leading-relaxed">
+              {data.cita}
             </p>
-            <p className="font-cardo text-marino/80 text-base leading-relaxed">
-              {data["descipcion-2"]}
+            <p className="font-quicksand text-white text-xs tracking-[0.25em] uppercase mt-4">
+              — {data.autor}
             </p>
           </div>
         </div>
+      </section>
 
-        {/* TMTD: imagen lateral + descripciones 3, 4 y 5 */}
-        <div className="border-t border-dorado/30 pt-16">
-          <div className="flex flex-col lg:flex-row-reverse gap-14 items-start">
-            <div className="lg:w-2/5 flex justify-center">
-              <Image
-                src="/assets/cesar_new-min.webp"
-                width={500}
-                height={650}
-                alt="César Escalante — TMTD"
-                className="w-full max-w-sm h-auto rounded-sm shadow-xl object-cover object-top"
-              />
-            </div>
-
-            <div className="lg:w-3/5 flex flex-col gap-6">
-              <div className="border-l-4 border-dorado pl-6">
-                <h2 className="font-cardo text-marino text-2xl lg:text-3xl leading-snug">
-                  Teoría de la Mente Triádica Dialéctica
-                </h2>
-                <span className="font-quicksand text-dorado text-xs tracking-widest uppercase">
-                  TMTD
-                </span>
-              </div>
-              <p className="font-cardo text-marino/80 text-base leading-relaxed">
-                {data["descipcion-3"]}
-              </p>
-              <p className="font-cardo text-marino/80 text-base leading-relaxed">
-                {data["descripcion-4"]}
-              </p>
-              <p className="font-cardo text-marino/80 text-base leading-relaxed">
-                {data["descripcion-5"]}
-              </p>
-            </div>
-          </div>
+      {/* ── BIO ── */}
+      <section
+        className="min-h-screen flex items-center relative"
+        style={{
+          backgroundImage: "url('/assets/fondo_sobre-mi2.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "left center",
+        }}
+      >
+        <div className="absolute inset-0 bg-verde/65" />
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-end gap-8 py-24">
+          <span className="font-quicksand text-white text-xs tracking-[0.3em] uppercase">
+            Trayectoria
+          </span>
+          <p className="font-cardo text-white text-base lg:text-lg leading-relaxed text-right max-w-xl">
+            {data["descipcion-1"]}
+          </p>
+          <div className="w-16 h-px bg-white/50" />
+          <p className="font-cardo text-white text-base lg:text-lg leading-relaxed text-right max-w-xl">
+            {data["descipcion-2"]}
+          </p>
         </div>
+      </section>
 
-      </div>
+      {/* ── TMTD ── */}
+      <section
+        className="min-h-screen flex items-center relative"
+        style={{
+          backgroundImage: "url('/assets/fondo_sobre-mi3.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "right center",
+        }}
+      >
+        <div className="absolute inset-0 bg-marino/65" />
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-start gap-6 py-24">
+          <span className="font-quicksand text-white text-xs tracking-[0.3em] uppercase">
+            Desarrollo teórico
+          </span>
+          <div className="border-l-4 border-verde pl-6">
+            <h2 className="font-cardo text-white text-3xl lg:text-4xl leading-snug">
+              Teoría de la Mente Triádica Dialéctica
+            </h2>
+            <span className="font-quicksand text-white text-xs tracking-widest uppercase">
+              TMTD
+            </span>
+          </div>
+          <p className="font-cardo text-white text-base lg:text-lg leading-relaxed max-w-2xl">
+            {data["descipcion-3"]}
+          </p>
+          <div className="w-16 h-px bg-white/50" />
+          <p className="font-cardo text-white text-base lg:text-lg leading-relaxed max-w-2xl">
+            {data["descripcion-4"]}
+          </p>
+          <p className="font-cardo text-white text-base lg:text-lg leading-relaxed max-w-2xl">
+            {data["descripcion-5"]}
+          </p>
+        </div>
+      </section>
+
     </main>
   );
 }

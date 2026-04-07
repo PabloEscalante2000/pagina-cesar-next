@@ -3,6 +3,7 @@ import I18nProvider from "./I18nProvider";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import WhIcon from "@/components/WhIcon";
 
 const BASE_URL = "https://cesarescalantesifuentes.com";
 
@@ -86,6 +87,7 @@ export default function RootLayout({
           <Nav />
           {children}
           <Footer />
+          <WhIcon />
         </I18nProvider>
       </body>
     </html>

@@ -71,27 +71,28 @@ export default function Landing() {
         style={{
           backgroundImage: "url('/assets/fondo_hero.png')",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "right center",
         }}
       >
-        <div className="absolute inset-0 bg-crema/50" />
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-start justify-center gap-5 pt-20">
-          <h1 className="font-cardo text-marino text-4xl md:text-5xl lg:text-6xl leading-tight uppercase">
-            César Escalante
-          </h1>
-          {/* Línea divisoria: elipse SVG, color verde, más gruesa en el centro */}
-          <svg
-            viewBox="0 0 560 12"
-            height="12"
-            className="w-[min(560px,100%)]"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <ellipse cx="280" cy="6" rx="280" ry="6" fill="#708273" />
-          </svg>
-          <p className="font-quicksand text-marino text-lg md:text-xl lg:text-2xl tracking-widest">
-            Psicólogo clínico&nbsp;·&nbsp;Psicoterapeuta&nbsp;·&nbsp;Neuropsicólogo
-          </p>
+        <div className="relative z-10 flex items-start justify-center mr-auto">
+          <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center gap-5 pt-20">
+            <h1 className="font-cardo text-marino text-4xl md:text-5xl lg:text-6xl leading-tight uppercase">
+              César Escalante
+            </h1>
+            {/* Línea divisoria: elipse SVG, color verde, más gruesa en el centro */}
+            <svg
+              viewBox="0 0 560 12"
+              height="12"
+              className="w-[min(560px,100%)]"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <ellipse cx="280" cy="6" rx="280" ry="6" fill="#708273" />
+            </svg>
+            <p className="font-quicksand text-marino text-lg md:text-xl lg:text-2xl tracking-widest">
+              Psicólogo clínico&nbsp;·&nbsp;Psicoterapeuta&nbsp;·&nbsp;Neuropsicólogo
+            </p>
+          </div>
         </div>
       </section>
 
@@ -130,7 +131,7 @@ export default function Landing() {
       </section>
 
       {/* ── LIBRO: EL AMOR ES UN DELIRIO ── */}
-      <section className="bg-crema py-24">
+      <section className="bg-marino py-24">
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row gap-14 items-center">
           {/* Imagen del libro */}
           <div className="lg:w-1/2 flex justify-center">
@@ -148,11 +149,11 @@ export default function Landing() {
             <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
               Disponible ahora
             </span>
-            <h2 className="font-cardo text-marino text-4xl lg:text-5xl leading-tight">
+            <h2 className="font-cardo text-crema text-4xl lg:text-5xl leading-tight">
               El amor es un delirio
             </h2>
             <div className="w-16 h-px bg-dorado" />
-            <p className="font-cardo text-marino/75 text-base leading-relaxed">
+            <p className="font-cardo text-crema/75 text-base leading-relaxed">
               Este ensayo examina cómo la mente, impulsada por el amor, construye certezas
               como defensa ante la duda. Más que explorar el amor como vivencia, el libro
               investiga el momento en que el afecto se convierte en interpretación, cuando los
@@ -160,14 +161,14 @@ export default function Landing() {
               incuestionables. El autor sugiere que el exceso de pensamiento se convierte en
               un mecanismo sofisticado para perder el amor mismo.
             </p>
-            <p className="font-cardo text-marino/75 text-base leading-relaxed">
+            <p className="font-cardo text-crema/75 text-base leading-relaxed">
               La obra es una meditación clínica y cultural sobre cómo opera la incertidumbre
               en los vínculos amorosos. Se aparta de los marcos de la autoayuda para analizar
               el amor como un fenómeno psicológico complejo, donde el deseo, la duda y la
               fantasía se intersectan con la necesidad humana de control. La pregunta central
               es qué sucede cuando el amor deja de sentirse y empieza a pensarse en exceso.
             </p>
-            <p className="font-cardo text-marino/75 text-base leading-relaxed">
+            <p className="font-cardo text-crema/75 text-base leading-relaxed">
               César Escalante, con más de veinticinco años de práctica clínica, explora cómo
               la psique construye significados y se defiende de lo desconocido. Este libro
               surgió de preguntas recurrentes en su trabajo terapéutico: las formas en que el
@@ -179,7 +180,7 @@ export default function Landing() {
               href="https://elamoresundelirio.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit px-8 py-3 bg-marino text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-marino/80 transition-colors duration-200"
+              className="w-fit px-8 py-3 bg-dorado text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-dorado/80 transition-colors duration-200"
             >
               Ver sitio web
             </a>
@@ -191,21 +192,22 @@ export default function Landing() {
       <section className="bg-crema py-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-cardo text-marino text-4xl lg:text-5xl">Mis Empresas</h2>
+            <span className="font-quicksand text-verde text-xs tracking-[0.3em] uppercase">Red de organizaciones</span>
+            <h2 className="font-cardo text-marino text-4xl lg:text-5xl mt-2">Mis Empresas</h2>
             <div className="w-16 h-px bg-dorado mx-auto mt-4" />
           </div>
           <div className="flex flex-wrap justify-center gap-14">
             {empresas.map((val, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center gap-5 max-w-[220px] text-center"
+                className="flex flex-col items-center gap-5 max-w-[240px] text-center"
               >
                 <Image
                   src={val.logo}
-                  width={200}
-                  height={120}
+                  width={240}
+                  height={160}
                   alt={`Logo ${val.nombre}`}
-                  className="h-24 w-auto object-contain"
+                  className="h-28 w-auto object-contain"
                   style={val.color ? { filter: "invert(48%) sepia(14%) saturate(830%) hue-rotate(36deg) brightness(88%) contrast(85%)" } : {}}
                 />
                 <p className="font-cardo text-marino text-base font-bold">{val.nombre}</p>
@@ -229,13 +231,14 @@ export default function Landing() {
       </section>
 
       {/* ── ASOCIADO A ── */}
-      <section className="bg-marino py-24">
+      <section className="bg-verde py-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-cardo text-crema text-4xl lg:text-5xl">Asociado a</h2>
+            <span className="font-quicksand text-crema/70 text-xs tracking-[0.3em] uppercase">Membresías internacionales</span>
+            <h2 className="font-cardo text-crema text-4xl lg:text-5xl mt-2">Asociado a</h2>
             <div className="w-16 h-px bg-dorado mx-auto mt-4" />
           </div>
-          <div className="flex flex-wrap justify-center gap-12">
+          <div className="flex flex-wrap justify-center gap-10">
             {asociaciones.map((val, i) => (
               <div
                 key={i}
@@ -243,12 +246,12 @@ export default function Landing() {
               >
                 <Image
                   src={val.img}
-                  width={120}
-                  height={80}
+                  width={240}
+                  height={160}
                   alt={val.alt}
-                  className="h-16 w-auto object-contain"
+                  className="h-28 w-auto object-contain"
                 />
-                <p className="font-quicksand text-crema/70 text-xs leading-relaxed tracking-wide">
+                <p className="font-quicksand text-crema/85 text-xs leading-relaxed tracking-wide">
                   {val.nombre}
                 </p>
               </div>
