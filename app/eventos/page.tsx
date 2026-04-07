@@ -170,6 +170,15 @@ export default function EventosPage() {
                   </div>
                 </div>
               </div>
+
+              <a
+                href="https://api.whatsapp.com/send?phone=51966968791&text=Buenos%20d%C3%ADas,%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit px-8 py-3 bg-dorado text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-dorado/80 transition-colors duration-200"
+              >
+                Inscribirme
+              </a>
             </div>
           </div>
         </div>

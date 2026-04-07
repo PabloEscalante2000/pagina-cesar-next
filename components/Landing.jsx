@@ -45,12 +45,12 @@ const asociaciones = [
     alt: "Logo NSPA",
   },
   {
-    img: "/assets/member.jpeg",
+    img: "/assets/member.png",
     nombre: "Centro Intercultural de Londres (LIC)",
     alt: "Logo London Intercultural Center",
   },
   {
-    img: "/assets/iaoth.jpeg",
+    img: "/assets/iaoth.png",
     nombre: "Asociación Internacional de Terapeutas (IAOTH)",
     alt: "Logo IAOTH",
   },

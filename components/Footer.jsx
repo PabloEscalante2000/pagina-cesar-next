@@ -1,13 +1,13 @@
 "use client";
 
-import { faFacebook, faSpotify, faYoutube, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faSpotify, faYoutube, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const arrayMedia = [
   {
-    icon: faFacebook,
-    link: "https://www.facebook.com/cesar.escalantesifuentes",
-    label: "Facebook",
+    icon: faInstagram,
+    link: "https://www.instagram.com/cesarescalante.psicoterapeuta/",
+    label: "Instagram",
   },
   {
     icon: faSpotify,
