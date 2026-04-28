@@ -184,6 +184,54 @@ export default function EventosPage() {
         </div>
       </section>
 
+      {/* ── EVENTO JOINNUS ── */}
+      <section className="bg-crema py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+
+          <div className="mb-12">
+            <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
+              Evento
+            </span>
+            <h2 className="font-cardo text-marino text-3xl lg:text-4xl mt-3 leading-snug italic">
+              «Los cambios en la pareja ante la llegada de la maternidad»
+            </h2>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+
+            {/* Imagen */}
+            <div className="lg:w-2/5">
+              <div className="relative aspect-square overflow-hidden rounded-sm">
+                <Image
+                  src="/assets/joinus_normal.jpg"
+                  alt="Los cambios en la pareja ante la llegada de la maternidad"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
+            </div>
+
+            {/* Info */}
+            <div className="lg:w-3/5 flex flex-col gap-6">
+              <p className="font-cardo text-marino/80 text-base leading-relaxed">
+                La transición hacia la maternidad no sólo transforma la vida de la mujer,
+                sino que redefine por completo la estructura del vínculo de pareja.
+              </p>
+
+              <a
+                href="https://www.joinnus.com/events/seminarios-conferencias/lima-los-cambios-en-la-pareja-ante-la-llegada-de-la-maternidad-75643"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit px-8 py-3 bg-marino text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-marino/80 transition-colors duration-200"
+              >
+                Ver en Joinnus
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
