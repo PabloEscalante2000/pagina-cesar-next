@@ -232,6 +232,87 @@ export default function EventosPage() {
         </div>
       </section>
 
+      {/* ── MÁS ALLÁ DEL DIAGNÓSTICO ── */}
+      <section className="bg-marino py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+
+          <div className="mb-12">
+            <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
+              Seminario-taller
+            </span>
+            <h2 className="font-cardo text-crema text-3xl lg:text-4xl mt-3 leading-snug italic">
+              «Más allá del Diagnóstico»
+            </h2>
+            <p className="font-quicksand text-crema/50 text-xs tracking-[0.2em] uppercase mt-3">
+              Claves neurocientíficas, educativas y clínicas
+            </p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+
+            {/* Imagen */}
+            <div className="lg:w-2/5">
+              <div className="relative aspect-square overflow-hidden rounded-sm">
+                <Image
+                  src="/assets/taller_evento.jpg"
+                  alt="Más allá del Diagnóstico — Seminario-taller"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-marino/30" />
+              </div>
+            </div>
+
+            {/* Info */}
+            <div className="lg:w-3/5 flex flex-col gap-6">
+              <p className="font-cardo text-crema/80 text-base leading-relaxed">
+                Un intensivo de tres sesiones que explora la neurodivergencia integrando los
+                hallazgos más recientes de la neurociencia con la práctica educativa inclusiva
+                y el abordaje clínico. Diseñado para traducir conceptos en estrategias concretas
+                de acompañamiento.
+              </p>
+              <p className="font-quicksand text-crema/60 text-sm leading-relaxed">
+                Dirigido a docentes, padres y cuidadores, estudiantes de psicología,
+                psicólogos y profesionales afines.
+              </p>
+
+              <div className="flex flex-col gap-4 border-l-4 border-dorado pl-6">
+                <div>
+                  <p className="font-quicksand text-dorado text-xs tracking-[0.25em] uppercase mb-1">Fecha</p>
+                  <p className="font-cardo text-crema text-lg">6, 13 y 20 de junio</p>
+                  <p className="font-quicksand text-crema/50 text-xs mt-0.5">Tres sábados · 3 horas por sesión</p>
+                </div>
+                <div>
+                  <p className="font-quicksand text-dorado text-xs tracking-[0.25em] uppercase mb-1">Lugar</p>
+                  <p className="font-cardo text-crema text-lg">La Aurora, Miraflores</p>
+                  <p className="font-quicksand text-crema/50 text-xs mt-0.5">Pasaje El Pacayar 149 · También en modalidad virtual</p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-crema/10">
+                <p className="font-quicksand text-dorado text-xs tracking-[0.25em] uppercase mb-4">Dictado por</p>
+                <div>
+                  <p className="font-cardo text-crema text-base font-bold">César Escalante Sifuentes</p>
+                  <p className="font-quicksand text-crema/60 text-xs leading-relaxed">
+                    Neuropsicólogo y psicoterapeuta especializado en poblaciones neurodivergentes.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href="https://api.whatsapp.com/send?phone=51966968791&text=Hola,%20quisiera%20inscribirme%20al%20seminario%20M%C3%A1s%20all%C3%A1%20del%20diagn%C3%B3stico"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit px-8 py-3 bg-dorado text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-dorado/80 transition-colors duration-200"
+              >
+                Inscribirme
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
