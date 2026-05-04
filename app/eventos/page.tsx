@@ -201,7 +201,7 @@ export default function EventosPage() {
 
             {/* Imagen */}
             <div className="lg:w-2/5">
-              <div className="relative aspect-square overflow-hidden rounded-sm">
+              <div className="relative aspect-video overflow-hidden rounded-sm">
                 <Image
                   src="/assets/joinus_normal.jpg"
                   alt="Los cambios en la pareja ante la llegada de la maternidad"
