@@ -4,7 +4,11 @@
       "WebFetch(domain:elamoresundelirio.com)",
       "Bash(npm run:*)",
       "Bash(identify \"C:/Users/grupo/Documents/proy_programacion/react/pagina-cesar-next/public/assets/web_icono.png\")",
-      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('C:/Users/grupo/Documents/proy_programacion/react/pagina-cesar-next/public/assets/web_icono.png'\\); print\\(img.size, img.mode\\)\")"
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('C:/Users/grupo/Documents/proy_programacion/react/pagina-cesar-next/public/assets/web_icono.png'\\); print\\(img.size, img.mode\\)\")",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\grupo\\\\Documents\\\\proy_programacion\\\\react\\\\pagina-cesar-next\" -Recurse -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)",
+      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\grupo\\\\Documents\\\\proy_programacion\\\\react\\\\pagina-cesar-next\\\\public\\\\data\\\\dataArticulos.json' | Select-Object -First 30\")"
     ]
   }
 }

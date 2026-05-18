@@ -82,8 +82,66 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "César Escalante Sifuentes",
+              "url": "https://cesarescalantesifuentes.com/",
+              "jobTitle": ["Psicólogo Clínico", "Psicoterapeuta", "Neuropsicólogo"],
+              "description": "Psicólogo clínico, psicoterapeuta psicoanalítico y neuropsicólogo. Magíster en Neuropsicología (URJC). Fundador de Grupo EADES. Autor de la Teoría de la Mente Triádica Dialéctica.",
+              "telephone": "+51930509438",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "General Silva 570",
+                "addressLocality": "Miraflores",
+                "addressCountry": "PE"
+              },
+              "alumniOf": [
+                { "@type": "CollegeOrUniversity", "name": "Universidad Rey Juan Carlos" },
+                { "@type": "CollegeOrUniversity", "name": "Universidad Peruana Cayetano Heredia" }
+              ],
+              "memberOf": [
+                { "@type": "Organization", "name": "Sociedad Interamericana de Psicología (SIP)" },
+                { "@type": "Organization", "name": "Sociedad Internacional de Neuropsicoanálisis" },
+                { "@type": "Organization", "name": "Asociación Internacional de Terapeutas (IAOTH)" }
+              ],
+              "sameAs": [
+                "https://www.instagram.com/cesarescalante.psicoterapeuta/",
+                "https://pe.linkedin.com/in/cesar-escalante-sifuentes-948389347",
+                "https://open.spotify.com/show/4DBExpbyHvEpeA5bhxM5M9"
+              ],
+              "knowsAbout": [
+                "Neuropsicología",
+                "Psicoterapia Psicoanalítica",
+                "TMTD",
+                "Terapia Sistémica Familiar",
+                "Salud Mental"
+              ]
+            }),
+          }}
+        />
       </head>
       <body>
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-1JXPL9B6RY"
+        />
+        <Script
+          id="gtag-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JXPL9B6RY');
+            `,
+          }}
+        />
         <Script
           id="meta-pixel"
           strategy="afterInteractive"

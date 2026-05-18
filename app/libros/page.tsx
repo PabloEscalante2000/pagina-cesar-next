@@ -60,9 +60,34 @@ const fotos = [
   { src: "/assets/eaeud_4.jpeg", alt: "Lanzamiento El amor es un delirio — foto 4" },
 ];
 
+const bookJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "El amor es un delirio",
+  "author": {
+    "@type": "Person",
+    "name": "César Escalante Sifuentes",
+    "url": "https://cesarescalantesifuentes.com/",
+  },
+  "url": "https://cesarescalantesifuentes.com/libros",
+  "description": "Un ensayo sobre cómo la mente, en nombre del amor, fabrica certezas para no tolerar la duda.",
+  "inLanguage": "es",
+  "genre": "Ensayo · Psicología",
+  "image": "https://cesarescalantesifuentes.com/assets/EL-AMOR-ES-UN-DELIRIO-MOCKUP-3-1-1.webp",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.amazon.com/-/es/El-amor-delirio-cultural-incertidumbre/dp/B0GSVWKD5X/",
+  },
+};
+
 export default function LibrosPage() {
   return (
     <main className="min-h-screen bg-crema">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+      />
 
       {/* ── HERO: LIBRO ── */}
       <section className="pt-28 pb-24 px-6 bg-crema">

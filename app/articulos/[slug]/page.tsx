@@ -26,17 +26,24 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = (articles as Article[]).find((a) => a.slug === slug);
   if (!article) return {};
+  const articleUrl = `https://cesarescalantesifuentes.com/articulos/${article.slug}`;
   return {
     title: article.titulo,
     description: article.subtitulo,
     openGraph: {
       title: `${article.titulo} — César Escalante Sifuentes`,
       description: article.subtitulo,
-      url: `https://cesarescalantesifuentes.com/articulos/${article.slug}`,
+      url: articleUrl,
       images: [{ url: article.imagen }],
     },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: article.titulo,
+      description: article.subtitulo,
+      images: [article.imagen],
+    },
     alternates: {
-      canonical: `https://cesarescalantesifuentes.com/articulos/${article.slug}`,
+      canonical: articleUrl,
     },
   };
 }
@@ -57,11 +64,34 @@ export default async function ArticuloPage({
     );
   }
 
-  // First paragraph is the intro, rest is body
   const [intro, ...body] = article.contenido;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.titulo,
+    "description": article.subtitulo,
+    "image": `https://cesarescalantesifuentes.com${article.imagen}`,
+    "author": {
+      "@type": "Person",
+      "name": "César Escalante Sifuentes",
+      "url": "https://cesarescalantesifuentes.com/",
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "César Escalante Sifuentes",
+      "url": "https://cesarescalantesifuentes.com/",
+    },
+    "url": `https://cesarescalantesifuentes.com/articulos/${article.slug}`,
+    "mainEntityOfPage": `https://cesarescalantesifuentes.com/articulos/${article.slug}`,
+  };
 
   return (
     <main className="min-h-screen bg-crema pt-24 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Header */}
       <div className="max-w-3xl mx-auto px-6 mb-10">
         <Link
