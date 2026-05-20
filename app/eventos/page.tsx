@@ -71,7 +71,7 @@ export default function EventosPage() {
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-3 h-[420px] lg:h-[500px]">
             <div className="relative col-span-1 row-span-2 overflow-hidden rounded-sm h-full">
               <Image
-                src="/assets/cesar_new.jpg"
+                src="/assets/eventos_1.jpg"
                 alt="César Escalante"
                 fill
                 className="object-cover object-top"
@@ -80,7 +80,7 @@ export default function EventosPage() {
             </div>
             <div className="relative overflow-hidden rounded-sm">
               <Image
-                src="/assets/taller_evento.jpg"
+                src="/assets/eventos_2.jpg"
                 alt="Taller César Escalante"
                 fill
                 className="object-cover object-center"
@@ -89,7 +89,7 @@ export default function EventosPage() {
             </div>
             <div className="relative overflow-hidden rounded-sm">
               <Image
-                src="/assets/carr_img1_new.JPG"
+                src="/assets/eventos_3.jpg"
                 alt="Evento César Escalante"
                 fill
                 className="object-cover object-center"
@@ -100,137 +100,7 @@ export default function EventosPage() {
         </div>
       </section>
 
-      {/* ── SEMINARIO-TALLER DESTACADO ── */}
-      <section className="bg-marino py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-
-          <div className="mb-12">
-            <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
-              Próximo evento
-            </span>
-            <h2 className="font-cardo text-crema text-3xl lg:text-4xl mt-3 leading-snug">
-              Seminario-taller
-            </h2>
-            <h3 className="font-cardo text-dorado text-2xl lg:text-3xl mt-1 leading-snug italic">
-              «Cuando el cerebro va por otro camino»
-            </h3>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-
-            {/* Imagen */}
-            <div className="lg:w-2/5">
-              <div className="relative aspect-square overflow-hidden rounded-sm">
-                <Image
-                  src="/assets/cesar_new-min.webp"
-                  alt="Seminario — Cuando el cerebro va por otro camino"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-                <div className="absolute inset-0 bg-marino/30" />
-              </div>
-            </div>
-
-            {/* Info */}
-            <div className="lg:w-3/5 flex flex-col gap-6">
-              <p className="font-cardo text-crema/80 text-base leading-relaxed">
-                Orientado a comprender la neurodivergencia desde una perspectiva clínica y
-                de las problemáticas del aprendizaje.
-              </p>
-              <p className="font-quicksand text-crema/60 text-sm leading-relaxed">
-                Dirigido a profesionales, docentes y público interesado.
-              </p>
-
-              <div className="flex flex-col gap-4 border-l-4 border-dorado pl-6">
-                <div>
-                  <p className="font-quicksand text-dorado text-xs tracking-[0.25em] uppercase mb-1">Fecha</p>
-                  <p className="font-cardo text-crema text-lg">6, 13 y 20 de junio</p>
-                </div>
-                <div>
-                  <p className="font-quicksand text-dorado text-xs tracking-[0.25em] uppercase mb-1">Lugar</p>
-                  <p className="font-cardo text-crema text-lg">Hotel Miramar</p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-crema/10">
-                <p className="font-quicksand text-dorado text-xs tracking-[0.25em] uppercase mb-4">Dictado por</p>
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <p className="font-cardo text-crema text-base font-bold">César Escalante</p>
-                    <p className="font-quicksand text-crema/60 text-xs leading-relaxed">
-                      Mag. en neuropsicología, psicólogo clínico y psicoterapeuta.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-cardo text-crema text-base font-bold">Natalia Escalante</p>
-                    <p className="font-quicksand text-crema/60 text-xs leading-relaxed">
-                      Docente y Mag. en problemáticas del aprendizaje por la PUCP.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="https://api.whatsapp.com/send?phone=51966968791&text=Buenos%20d%C3%ADas,%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit px-8 py-3 bg-dorado text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-dorado/80 transition-colors duration-200"
-              >
-                Inscribirme
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── EVENTO JOINNUS ── */}
-      <section className="bg-crema py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-
-          <div className="mb-12">
-            <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
-              Evento
-            </span>
-            <h2 className="font-cardo text-marino text-3xl lg:text-4xl mt-3 leading-snug italic">
-              «Los cambios en la pareja ante la llegada de la maternidad»
-            </h2>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-
-            {/* Imagen */}
-            <div className="lg:w-2/5">
-              <div className="relative aspect-video overflow-hidden rounded-sm">
-                <Image
-                  src="/assets/joinus_normal.jpg"
-                  alt="Los cambios en la pareja ante la llegada de la maternidad"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-              </div>
-            </div>
-
-            {/* Info */}
-            <div className="lg:w-3/5 flex flex-col gap-6">
-              <p className="font-cardo text-marino/80 text-base leading-relaxed">
-                La transición hacia la maternidad no sólo transforma la vida de la mujer,
-                sino que redefine por completo la estructura del vínculo de pareja.
-              </p>
-
-              <a
-                href="https://www.joinnus.com/events/seminarios-conferencias/lima-los-cambios-en-la-pareja-ante-la-llegada-de-la-maternidad-75643"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit px-8 py-3 bg-marino text-crema font-quicksand font-semibold text-sm tracking-widest uppercase rounded-full hover:bg-marino/80 transition-colors duration-200"
-              >
-                Ver en Joinnus
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* ── MÁS ALLÁ DEL DIAGNÓSTICO ── */}
       <section className="bg-marino py-24 px-6">
