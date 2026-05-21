@@ -121,10 +121,10 @@ export default function EventosPage() {
           <div className="flex flex-col lg:flex-row gap-12 items-start">
 
             {/* Imagen */}
-            <div className="lg:w-2/5">
-              <div className="relative aspect-square overflow-hidden rounded-sm">
+            <div className="lg:w-3/5">
+              <div className="relative aspect-16/12 overflow-hidden rounded-sm">
                 <Image
-                  src="/assets/taller_evento.jpg"
+                  src="/assets/brochure.webp"
                   alt="Más allá del Diagnóstico — Seminario-taller"
                   fill
                   className="object-cover object-center"
@@ -135,7 +135,7 @@ export default function EventosPage() {
             </div>
 
             {/* Info */}
-            <div className="lg:w-3/5 flex flex-col gap-6">
+            <div className="lg:w-2/5 flex flex-col gap-6">
               <p className="font-cardo text-crema/80 text-base leading-relaxed">
                 Un intensivo de tres sesiones que explora la neurodivergencia integrando los
                 hallazgos más recientes de la neurociencia con la práctica educativa inclusiva
