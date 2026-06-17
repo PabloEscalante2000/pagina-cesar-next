@@ -230,6 +230,33 @@ export default function CursosPage() {
         </div>
       </section>
 
+      {/* ── MUESTRA DEL CURSO ── */}
+      <section className="bg-marino py-20 px-6">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
+          <div className="text-center">
+            <span className="font-quicksand text-dorado text-xs tracking-[0.3em] uppercase">
+              Vista previa
+            </span>
+            <h2 className="font-cardo text-crema text-3xl lg:text-4xl mt-3">
+              Muestra del curso
+            </h2>
+            <div className="w-16 h-px bg-dorado mx-auto mt-4" />
+            <p className="font-cardo text-crema/60 text-base mt-6 leading-relaxed max-w-xl">
+              Conoce el enfoque y la metodología del programa antes de inscribirte.
+            </p>
+          </div>
+
+          <div className="w-full rounded-sm overflow-hidden" style={{ aspectRatio: "16/9" }}>
+            <iframe
+              src="https://drive.google.com/file/d/1bNMpZBrLUVNsp2sr_XzNX9bZt7AQR1XS/preview"
+              className="w-full h-full"
+              allow="autoplay"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── PÚBLICO OBJETIVO ── */}
       <section className="bg-marino py-20 px-6">
         <div className="max-w-5xl mx-auto">
